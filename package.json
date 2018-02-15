@@ -1,0 +1,19 @@
+{
+  "name": "veille-node-6",
+  "version": "1.0.0",
+  "description": "Ex6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jean1378872/veille-node-6.git"
+  },
+  "author": "e1378872",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jean1378872/veille-node-6/issues"
+  },
+  "homepage": "https://github.com/Jean1378872/veille-node-6#readme"
+}

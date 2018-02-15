@@ -16,9 +16,11 @@
  <table class="tableau">
  <% adresses.forEach(elm => {%>
  <tr>
- <td><%= elm.id %></td>
- <td><%= elm.nom %></td>
- <td><%= elm.telephone %></td>
+ <td><%= adr._id %></td>
+ <td><%= adr.nom %></td>
+ <td><%= adr.telephone %></td>
+ <td style="color:green;">Bouton save</td>
+ <a style="color: red;" href=http://localhost:8081/detruire/<%= adr._id %> >Détruire </a>
  </tr>
  <% }) %>
  </table>
