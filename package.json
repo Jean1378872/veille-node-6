@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Jean1378872/veille-node-6/issues"
   },
-  "homepage": "https://github.com/Jean1378872/veille-node-6#readme"
+  "homepage": "https://github.com/Jean1378872/veille-node-6#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.2",
+    "view-engine": "^1.1.1"
+  }
 }
