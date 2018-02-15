@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser= require('body-parser')
 const MongoClient = require('mongodb').MongoClient // le pilote MongoDB
-
+const ObjectID = require('mongodb').ObjectID;
 
 const app = express();
 app.set('view engine', 'ejs'); // générateur de template 
@@ -38,21 +38,14 @@ app.post('/ajouter', (req, res) => {
 /*********************************/
 
 /////////////////////// Détruire ////////////////////////
-app.get('/delete/:id', (req, res) => {
- var id = req.params.id 
-// var critere = 'ObjectId("58bae3feaf5a674b240cfe53")'
-// 58bae3feaf5a674b240cfe53
-// var critere = ObjectID.createFromHexString(id)
-var critere = ObjectID(req.params.id)
-console.log(critere)
-
-
-console.log(id)
+app.get('/detruire/:id', (req, res) => {
+ var id = req.params.id
+ console.log(id)
  db.collection('adresse')
- .findOneAndDelete({"_id": critere}, (err, resultat) => {
+ .findOneAndDelete({"_id": ObjectID(req.params.id)}, (err, resultat) => {
 
 if (err) return console.log(err)
- res.render('gabarit.ejs', {adresse: resultat})
+ res.redirect('/adresse')  // redirige vers la route qui affiche la collection
  })
 })
 /****************************************/

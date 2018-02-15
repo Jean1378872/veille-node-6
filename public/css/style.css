@@ -1,0 +1,10 @@
+body{
+	background-color: #CEECF5; 
+}
+.tableau{
+	border:collapse;
+}
+td,th{
+	border: 2px solid black;
+	padding: 5px;
+}
