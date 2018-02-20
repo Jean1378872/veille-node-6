@@ -1,6 +1,14 @@
 body{
 	background-color: #CEECF5; 
 }
+form,section,footer,nav{
+	text-align: center;
+	margin-left: 100px;
+}
+table{
+	margin-left: 700px;
+	text-align: center;
+}
 .tableau{
 	border:collapse;
 }
