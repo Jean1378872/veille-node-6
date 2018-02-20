@@ -28,14 +28,14 @@
  <th>Ajouter</th> 
  </tr>
  <% adresse.forEach(elm => {%>
- <tr contenteditable='true' id="<%= elm._id %>">
+ <tr id="<%= elm._id %>">
  <td><%= elm._id %></td>
- <td contenteditable='true'><%= elm.nom %></td>
- <td contenteditable='true'><%= elm.prenom %></td>
- <td contenteditable='true'><%= elm.courriel %></td>
- <td contenteditable='true'><%= elm.telephone %></td>
+ <td contenteditable='true'  onclick='$(this).focus();'><%= elm.nom %></td>
+ <td contenteditable='true'  onclick='$(this).focus();'><%= elm.prenom %></td>
+ <td contenteditable='true'  onclick='$(this).focus();'><%= elm.courriel %></td>
+ <td contenteditable='true'  onclick='$(this).focus();'><%= elm.telephone %></td>
  <td><a href="/detruire/<%= elm._id %>">detruire</a></td>
- <td><a class='sauver' href="/modifier">Sauver</a></td>
+ <td><a class='sauver' href="/ajouter/detruire">Sauver</a></td>
  </tr>
  <% }) %>
  </table>

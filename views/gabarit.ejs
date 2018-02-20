@@ -23,7 +23,8 @@
  let id = laLigne.children[0].innerHTML
  let nom = laLigne.children[1].innerHTML
  let prenom = laLigne.children[2].innerHTML
- let telephone = laLigne.children[3].innerHTML
+ let courriel = laLigne.children[3].innerHTML
+ let telephone = laLigne.children[4].innerHTML
 
 let elmForm = document.getElementById('mon_formulaire')
  console.log(elmForm.tagName)
@@ -31,7 +32,8 @@ let elmForm = document.getElementById('mon_formulaire')
  elmInput[0].value = id
  elmInput[1].value = nom
  elmInput[2].value = prenom
- elmInput[3].value = telephone
+ elmInput[3].value = courriel
+ elmInput[4].value = telephone
 
  elmForm.submit()
 
