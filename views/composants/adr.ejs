@@ -28,7 +28,7 @@
  <th>Ajouter</th> 
  </tr>
  <% adresse.forEach(elm => {%>
- <tr id="<%= elm._id %>">
+ <tr contenteditable='true' id="<%= elm._id %>">
  <td><%= elm._id %></td>
  <td contenteditable='true'><%= elm.nom %></td>
  <td contenteditable='true'><%= elm.prenom %></td>
