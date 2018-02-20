@@ -51,12 +51,12 @@ if (err) return console.log(err)
 /****************************************/
 
 /////////////////////////Trier////////////////////////////
-app.get('/trier/:______/:_______', (req, res) => {
+app.get('/trier/:cle/:ordre', (req, res) => {
 let cle = req.params.cle
  let ordre = (req.params.ordre == 'asc' ? 1 : -1)
  let cursor = db.collection('adresse').find().sort(cle,ordre).toArray(function(err, resultat){
- ordre = ______________________________
- res.render('adresses.ejs', {adresses: resultat, ______, _________ })
+ ordre = (req.params.ordre == 'asc' ? 'asc' : 'desc')
+ res.render('adresses.ejs', {adresses: resultat, cle, ordre })
 })
 })
 /*********************************************/
@@ -64,28 +64,30 @@ let cle = req.params.cle
 ///////////////////////Modifier///////////////////////
 app.post('/modifier', (req, res) => {
 console.log('req.body' + req.body)
- if (req.body['_id'] != __________)
- { 
+ /*if (req.body['_id'] != __________)
+ {*/ 
  console.log('sauvegarde') 
  var oModif = {
  "_id": ObjectID(req.body['_id']), 
- nom: req.body._____,
- prenom:req.body.______, 
- telephone:req.body._______
+ nom: req.body.nom,
+ prenom:req.body.prenom,
+ courriel:req.body.courriel, 
+ telephone:req.body.telephone
  }
  var util = require("util");
  console.log('util = ' + util.inspect(oModif));
- }
- else
- {
+ //}
+ //else
+ //{
  console.log('insert')
  console.log(req.body)
  var oModif = {
- nom: req.body.______,
- prenom:req.body.______, 
- telephone:req.body._______
+ nom: req.body.nom,
+ prenom:req.body.prenom,
+ courriel:req.body.courriel,  
+ telephone:req.body.telephone
  }
- }
+ //}
  db.collection('adresse').save(oModif, (err, result) => {
  if (err) return console.log(err)
  console.log('sauvegarder dans la BD')
@@ -97,7 +99,7 @@ console.log('req.body' + req.body)
 
 MongoClient.connect('mongodb://127.0.0.1:27017', (err, database) => {
  if (err) return console.log(err)
- db = database.db('carnet_adresse')
+ db = database.db('adresse')
 // lancement du serveur Express sur le port 8081
  app.listen(8081, () => {
  console.log('connexion à la BD et on écoute sur le port 8081')
